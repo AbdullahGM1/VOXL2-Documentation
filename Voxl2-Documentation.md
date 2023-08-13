@@ -209,8 +209,9 @@ VOXL2 Portal Configuration
 ==========================
 
 To enable the postal service, where we can view the cameras’ output, CPU and IMU plotting, flight info, and the VIO from the browser. We can access it with the VOXL2 IP address. To enable this service, we can use the following command:
-
+```
 voxl-configure-portal
+```
 
         Figure (6) below shows the command output.
 
