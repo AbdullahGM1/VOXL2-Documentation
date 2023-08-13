@@ -1,5 +1,4 @@
 
-Voxl2 Documentation
 
 Introduction
 ======================
