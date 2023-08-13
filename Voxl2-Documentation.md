@@ -317,7 +317,7 @@ Voxl-configure-extrinsics
 
 Figure (11) - Extrinsics command output.
 
-We will select the custom option, and select the path with the extrinsics.conf. We can create a custom file similar to the one on the path \[/etc/modalai/extrinsics.conf\] on the VOXL2 system. The one that we made for the VOXL2 extrinsics, can be seen [here](https://www.google.com/url?q=https://drive.google.com/file/d/17fY-u9_cFl2jo-a1hwfjprNAHy-Qfas_/view?usp%3Dsharing&sa=D&source=editors&ust=1691917602000854&usg=AOvVaw0G_LvhQCGOM2deJrSLHxct).
+We will select the custom option, and select the path with the extrinsics.conf. We can create a custom file similar to the one on the path `\[/etc/modalai/extrinsics.conf\]` on the VOXL2 system. The one that we made for the VOXL2 extrinsics, can be seen [here](https://www.google.com/url?q=https://drive.google.com/file/d/17fY-u9_cFl2jo-a1hwfjprNAHy-Qfas_/view?usp%3Dsharing&sa=D&source=editors&ust=1691917602000854&usg=AOvVaw0G_LvhQCGOM2deJrSLHxct).
 
 To check the loaded extrinsics file on the configuration, we can use the following command:
 ```
@@ -334,11 +334,11 @@ Figure (12) - The Front Orientation for VOXL2.
 
 So, if we need to change the orientation, the IMU driver needs to know the changes. To do so, we need to open a code file in the following path:
 
-/etc/modalai/voxl-px4.config
+`/etc/modalai/voxl-px4.config`
 
         We need to change the values on the below lines:
 
-qshell icm42688p start  -s -R
+`qshell icm42688p start  -s -R`
 
 If we rotate VOXL2 180 degrees Roll, we need to change the number to \[8\], and If we rotate VOXL2 180 degrees Yaw, we need to change the number to \[4\]. Figure (13) below shows the changes in code with the orientation rotate 180 degree Yaw.
 
@@ -351,9 +351,9 @@ Figure (13) - The Changes in the code with a rotation 180-degree Yaw.
 VOXL2 GPS Orientation
 =====================
 
-For the GPS orientation, if the arrow on the GPS is pointing forwards, we don't need to change anything. Otherways, we need to change the values on the code in the path \[/etc/modalai/voxl-px4.config\]. For the GPS & magnetometer in a Holybro GPS unit t,he rotation is specified as 10 (roll 180, yaw 90) when the unit is mounted on the drone with the arrow pointing towards the front of the drone. If you reverse this and the arrow points to the rear of the drone then you would specify 14 (roll 180, yaw 270).
+For the GPS orientation, if the arrow on the GPS is pointing forwards, we don't need to change anything. Otherways, we need to change the values on the code in the path `\[/etc/modalai/voxl-px4.config\]`. For the GPS & magnetometer in a Holybro GPS unit t,he rotation is specified as 10 (roll 180, yaw 90) when the unit is mounted on the drone with the arrow pointing towards the front of the drone. If you reverse this and the arrow points to the rear of the drone then you would specify 14 (roll 180, yaw 270).
 
-        The changes in the code file in the path \[/etc/modalai/voxl-px4.config\], and the changes are in figure (14) below line:
+        The changes in the code file in the path `\[/etc/modalai/voxl-px4.config\]`, and the changes are in figure (14) below line:
 
 ![](images/image7.png)
 
@@ -364,13 +364,17 @@ VOXL2 ESCs Calibration
 
 To calibrate the ESCs, we need to run the following command:
 
+```
 px4-qshell pwm cal_backdoor
+```
 
 For more information, we can check this [documentation](https://www.google.com/url?q=https://docs.modalai.com/voxl2-io-user-guide/&sa=D&source=editors&ust=1691917602004620&usg=AOvVaw3eoEON33p8GS-31UA3Gt9M).
 
 To test the motors, we can run the following command.
 
+```
 px4-qshell pwm test -c 2 -p 1200
+```
 
 VOXL2 Calibration with QGC
 ==========================
@@ -385,28 +389,26 @@ VOXL2 ROS & MavROS:
 1.  Install ros (melodic):
 
 We can run the following command, and after installing ROS, we can source
-
+```
 apt install -y ros-melodic-ros-base ros-melodic-image-transport
-
+```
 Then, we can source (. /opt/ros/melodic/setup.sh) in (.bashrc)
 
 2.  Publish the topics:  
     
 
 At this point, ROS is running in VOXL2, and we need to publish the topics from the VOXL2. We can run the following launch file:
+```
+roslaunch voxl_mpa_to_ros voxl_mpa_to_ros.launch
 
-roslaunch voxl\_mpa\_to\_ros voxl\_mpa\_to\_ros.launch
-
+```
 3.  Run the mavros:
 
         To run the MavRos, we can run the following script, in the following path:
-
+```
 cd /home/mavros_test &&
-
-        Then, we can run the following script:
-
 ./run_mavros.sh
-
+```
         Now, MavROS is running, and the topics are published.
 
 Rviz on The workstation:
@@ -414,15 +416,15 @@ Rviz on The workstation:
 
         To be able to see the topics on the workstation, we can run the following commands:
 
-On the Workstation:
-
+On the `Workstation`:
+```
 export ROS_IP=Station_IP && export ROS\_MASTER\_URI=http://VOXL2_IP:11311
-
-On the VOXL2:
-
+```
+On `VOXL2`:
+```
 export ROS_IP=VOXL_IP && export ROS\_MASTER\_URI=http://VOXL_IP:11311
-
-        We just need to change the IP addresses on the above commands.
+```
+        We just need to change the `IP addresses` on the above commands.
 
 Test the services & Hardware:
 =============================
@@ -430,7 +432,7 @@ Test the services & Hardware:
 We can inspect the services as shown in the [documentation](https://www.google.com/url?q=https://docs.modalai.com/basic-functionalities/&sa=D&source=editors&ust=1691917602010029&usg=AOvVaw06dJHL1Rv5Zn7-XWZ4oB_B).
 
 To Listen to the sensors from PX4, we can do the following:
-
+```
 px4-listener sensor_gps (GPS)
 
 px4-listener sensor_mag (Magnetometer)
@@ -446,12 +448,15 @@ px4-listener battery_status
 px4-listener input_rc
 
 px4-listener esc_status
+```
 
 Conclusion
+============
 
 In this documentation, I showed the procedure of how to work with VOXL2 on the hardware side and the software as well. We can follow this documentation in the future with the new VOXL2, and we will be able to work with it and run it in less time than took us in the first VOXL2.  
 
 Useful Links:
+=============
 
 * [https://forum.modalai.com/topic/1914/changing-voxl2-dsp-px4-orientation/3](https://www.google.com/url?q=https://forum.modalai.com/topic/1914/changing-voxl2-dsp-px4-orientation/3&sa=D&source=editors&ust=1691917602012269&usg=AOvVaw3RD_JWxKDSA07Evf8npRvw)
 * [https://forum.modalai.com/topic/2063/gps-not-working/2](https://www.google.com/url?q=https://forum.modalai.com/topic/2063/gps-not-working/2&sa=D&source=editors&ust=1691917602012607&usg=AOvVaw3P7PXxlJKekhXDR-JQl6Wx)
