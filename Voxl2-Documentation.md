@@ -121,7 +121,9 @@ The Wifi Dongle Configuration
 We can enable the wifi to VOXL2 and connect to the WiFi by the command line below: 
 
 ```
+
 Voxl-wifi station ssid passward
+
 ```
 
 We can type the wifi name under (ssid) and wifi’s password and it will connect to the WiFi. For more information, we can read the documentation [here](https://www.google.com/url?q=https://docs.modalai.com/voxl-2-wifi-setup/&sa=D&source=editors&ust=1691917601989722&usg=AOvVaw32EKgfkzfJxdpviKpNm_5u). To test if VOXL2 is connect to                   the internet, we can use the command below:
@@ -224,7 +226,9 @@ VOXL2 Camera Configuration
 To set the available cameras on the VOXL2, we need to run the following command below:
 
 ```
+
 voxl-configure-cameras
+
 ```
 
 The Figure (7) below shows the command output:
@@ -241,7 +245,9 @@ Camera Calibration                               
 After configuring the cameras, we can start the calibration process by the command below:
 
 ```
+
 voxl-calibrate-camera
+
 ```
 
 * Note: The calibration process has to be done in normal light brightness, and the calibration process can be done within the portal. For more information, we can check this [documentation](https://www.google.com/url?q=https://docs.modalai.com/calibrate-cameras-0_9/&sa=D&source=editors&ust=1691917601997094&usg=AOvVaw0-2CijSzMBHVWKYL76imMy).
