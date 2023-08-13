@@ -2,6 +2,8 @@
 Voxl2 Documentation
 
 Introduction
+======================
+
 
 This documentation explains the needed process and configuration of VOXL2 to set up. This document will explain the hardware and software aspects and the required changes that must be done in the software.
 
