@@ -111,7 +111,9 @@ To access VOXL2 for the first time, we can access it by using ADB (Android Debug
 
 The installation for the ADB on Ubuntu can be seen in this [documentation](https://www.google.com/url?q=https://docs.modalai.com/setting-up-adb/&sa=D&source=editors&ust=1691917601988524&usg=AOvVaw0s_UmEc5tDdj70QNUygboE). After, installing the ADB, we can access VOXL2 by the below command:
 
+```
 adb shell
+```
 
 The Wifi Dongle Configuration
 =============================
