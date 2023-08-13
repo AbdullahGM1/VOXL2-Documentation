@@ -317,7 +317,7 @@ Voxl-configure-extrinsics
 
 Figure (11) - Extrinsics command output.
 
-We will select the custom option, and select the path with the extrinsics.conf. We can create a custom file similar to the one on the path `\[/etc/modalai/extrinsics.conf\]` on the VOXL2 system. The one that we made for the VOXL2 extrinsics, can be seen [here](https://www.google.com/url?q=https://drive.google.com/file/d/17fY-u9_cFl2jo-a1hwfjprNAHy-Qfas_/view?usp%3Dsharing&sa=D&source=editors&ust=1691917602000854&usg=AOvVaw0G_LvhQCGOM2deJrSLHxct).
+We will select the custom option, and select the path with the extrinsics.conf. We can create a custom file similar to the one on the path `/etc/modalai/extrinsics.conf\` on the VOXL2 system. The one that we made for the VOXL2 extrinsics, can be seen [here](AAAAAAAA).
 
 To check the loaded extrinsics file on the configuration, we can use the following command:
 ```
