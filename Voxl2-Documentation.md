@@ -120,11 +120,15 @@ The Wifi Dongle Configuration
 
 We can enable the wifi to VOXL2 and connect to the WiFi by the command line below: 
 
+```
 Voxl-wifi station ssid passward
+```
 
 We can type the wifi name under (ssid) and wifi’s password and it will connect to the WiFi. For more information, we can read the documentation [here](https://www.google.com/url?q=https://docs.modalai.com/voxl-2-wifi-setup/&sa=D&source=editors&ust=1691917601989722&usg=AOvVaw32EKgfkzfJxdpviKpNm_5u). To test if VOXL2 is connect to                   the internet, we can use the command below:
 
+```
 ping google.com
+```
 
 Access VOXL2 with SSH
 =====================
@@ -133,22 +137,30 @@ We can follow the below steps:
 
 1- Check VOXL2 IP address:
 
+```
 ifconfig
+```
 
 2- Start connecting to VOXL2 using ssh from the workstation:
 
+```
 ssh root@VOXL2\_IP\_Address
+```
 
 3- VOXL2 default password:
 
+```
 oelinux123
+```
 
 VOXL2 Services
 ==============
 
 At this point, we can access VOXL2 easily by using the ssh. Now we need to enable some options (services) that are pre-installed in VOXL2. To check these services, we need to do the following:
 
+```
 voxl-inspect-services -v
+```
 
         Figure (5) below shows the services that VOXL2 provides.
 
@@ -158,6 +170,7 @@ Figure (5) - VOXL2 Services.
 
 From figure (5) above, we need to enable the following services;
 
+```
 * Voxl-camera-server
 * Voxl-mavlink-server
 * Voxl-portal
@@ -166,9 +179,11 @@ From figure (5) above, we need to enable the following services;
 * Voxl-px4
 * Voxl-qvio-server
 * Voxl-vision-px4
+```
 
 We can enable/configure each service by the commands below:
 
+```
 voxl-configure-cameras - To set up the cameras
 
 voxl-configure-cpu-monitor - to enable the cpu monitor
@@ -188,6 +203,7 @@ Voxl-configure-vision-px4
 voxl-configure-extrinsics
 
 VOXL2 Portal Configuration
+```
 ==========================
 
 To enable the postal service, where we can view the cameras’ output, CPU and IMU plotting, flight info, and the VIO from the browser. We can access it with the VOXL2 IP address. To enable this service, we can use the following command:
@@ -207,7 +223,9 @@ VOXL2 Camera Configuration
 
 To set the available cameras on the VOXL2, we need to run the following command below:
 
+```
 voxl-configure-cameras
+```
 
 The Figure (7) below shows the command output:
 
@@ -222,7 +240,9 @@ Camera Calibration                               
 
 After configuring the cameras, we can start the calibration process by the command below:
 
+```
 voxl-calibrate-camera
+```
 
 * Note: The calibration process has to be done in normal light brightness, and the calibration process can be done within the portal. For more information, we can check this [documentation](https://www.google.com/url?q=https://docs.modalai.com/calibrate-cameras-0_9/&sa=D&source=editors&ust=1691917601997094&usg=AOvVaw0-2CijSzMBHVWKYL76imMy).
 
@@ -232,9 +252,9 @@ VOXL2 Connection to QGC
 To connect VOXL’s PX4 to the QGC, we need to start with enabling the \[voxl-mavlink-server\],  \[voxl-px4\] & \[voxl-vision-px4\] services.
 
 A- Enable Mavlink:
-
-        Command: voxl-configure-mavlink-server
-
+```
+        voxl-configure-mavlink-server
+```
      Figure (8) below shows the command output.
 
 ![](images/image6.png)
@@ -243,7 +263,9 @@ Figure (8) - Mavlink Service configuration Output
 
 B- Enable Px4 IMU
 
-Command: voxl-configure-px4-imu-server
+```
+voxl-configure-px4-imu-server
+```
 
             Figure (9) below shows command output.
 
@@ -254,8 +276,9 @@ Figure (9) - PX4 IMU configuration command output.
 C- Enable vision PX4
 
         In this step, I can choose the IP address for the workstation to run the QGC at by using the command below:
-
+```
 voxl-configure-vision-px4
+```
 
         Now, we can open QGC on the workstation, and we will see VOXL2 is connected to it.
 
@@ -263,9 +286,9 @@ VOXL2 VIO Configuration
 =======================
 
         To configure the VIO, we can use the command below:
-
+```
  voxl-configure-qvio
-
+```
 Figure (10) below shows the command output.
 
 ![](images/image15.png)
@@ -278,9 +301,9 @@ VOXL2 Extrinsics Configuration
 ==============================
 
 The Extrinsics file is a file that describes the intrinsics (i.e. translations and rotations) between the coordinate frames of critical components of the drone body, the [documentation](https://www.google.com/url?q=https://www.google.com/search?channel%3Dfs%26client%3Dubuntu-sn%26q%3Dvoxl%2B2%2Bextrinsics&sa=D&source=editors&ust=1691917601999860&usg=AOvVaw10xWW4bo5RnfIFmwlqsgQQ). We can configure it by using the command below:
-
+```
 Voxl-configure-extrinsics
-
+```
     Figure (11) below shows the command output:
 
 ![](images/image11.png)
@@ -290,9 +313,9 @@ Figure (11) - Extrinsics command output.
 We will select the custom option, and select the path with the extrinsics.conf. We can create a custom file similar to the one on the path \[/etc/modalai/extrinsics.conf\] on the VOXL2 system. The one that we made for the VOXL2 extrinsics, can be seen [here](https://www.google.com/url?q=https://drive.google.com/file/d/17fY-u9_cFl2jo-a1hwfjprNAHy-Qfas_/view?usp%3Dsharing&sa=D&source=editors&ust=1691917602000854&usg=AOvVaw0G_LvhQCGOM2deJrSLHxct).
 
 To check the loaded extrinsics file on the configuration, we can use the following command:
-
+```
 voxl-inspect-extrinsics
-
+```
 VOXL2 Orientation:
 ==================
 
