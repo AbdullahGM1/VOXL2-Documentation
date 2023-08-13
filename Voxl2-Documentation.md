@@ -100,6 +100,7 @@ To power up VOXL2, we can see the documentation [here](https://www.google.com/ur
 Figure (4) - VOXL2 input voltage.
 
 Software
+=========
 
 After connecting all the hardware components, we can start with the software part. This section will explain the software aspects from accessing VOXL2 to the configurations for the hardware components and the QGC calibration. These two documentations [here](https://www.google.com/url?q=https://docs.modalai.com/voxl-developer-bootcamp/&sa=D&source=editors&ust=1691917601987844&usg=AOvVaw1EabXEfosOGBnppsHqMz1A)and [here](https://www.google.com/url?q=https://docs.modalai.com/voxl-sdk/&sa=D&source=editors&ust=1691917601988072&usg=AOvVaw1WUKuFHPnutHxotRiqJNLQ) are good points to start with, and reading it.
 
