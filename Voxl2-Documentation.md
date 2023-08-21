@@ -399,14 +399,20 @@ Then, we can source (. /opt/ros/melodic/setup.sh) in (.bashrc)
 ```
 apt-get install ros-melodic-mavros ros-melodic-mavros-extras ros-melodic-control-toolbox
 ```
-Install GeographicLib dataset 
+
+3. Install GeographicLib dataset 
 ```
 cd /opt/ros/melodic/lib/mavros 
 ./install_geographiclib_datasets.sh
 ```
 
+4. Clone the MAVROS Simple Examble
+```
+   cd /home
+git clone -b simple-example https://gitlab.com/voxl-public/support/mavros_test.git
+```
 
-3.  Publish the topics:  
+5.  Publish the topics:  
     
 
 At this point, ROS is running in VOXL2, and we need to publish the topics from the VOXL2. We can run the following launch file:
@@ -414,7 +420,7 @@ At this point, ROS is running in VOXL2, and we need to publish the topics from t
 roslaunch voxl_mpa_to_ros voxl_mpa_to_ros.launch
 
 ```
-4.  Run the mavros:
+6.  Run the mavros:
 
         To run the MavRos, we can run the following script, in the following path:
 ```
