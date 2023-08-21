@@ -74,7 +74,7 @@ Figure (2) - FrSky R-XSR receiver
 
 Figure (3) - the pinout for the SBUS port in the I/O board and the connection of the receiver to the I/O board
 
-        From the figure 2 above, we can see that we connect the SBUS Input in the I/O board to the SBUS Output in the FrSky receiver.
+        From Figure 2 above, we can see that we connect the SBUS Input in the I/O board to the SBUS Output in the FrSky receiver.
 
 To connect the RC transmitter, we need to make sure that the receiver and the transmitter are in the same channel, either ACCST or ACCESS.
 
@@ -399,6 +399,12 @@ Then, we can source (. /opt/ros/melodic/setup.sh) in (.bashrc)
 ```
 apt-get install ros-melodic-mavros ros-melodic-mavros-extras ros-melodic-control-toolbox
 ```
+Install GeographicLib dataset 
+```
+cd /opt/ros/melodic/lib/mavros 
+./install_geographiclib_datasets.sh
+```
+
 
 3.  Publish the topics:  
     
