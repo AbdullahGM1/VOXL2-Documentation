@@ -266,7 +266,7 @@ A- Enable Mavlink:
 
 ![](images/image6.png)
 
-Figure (8) - Mavlink Service configuration Output
+Figure (8) - Mavlink Service Configuration Output
 
 B- Enable Px4 IMU
 
@@ -274,7 +274,7 @@ B- Enable Px4 IMU
 voxl-configure-px4-imu-server
 ```
 
-            Figure (9) below shows command output.
+            Figure (9) below shows the command output.
 
 ![](images/image8.png)
 
@@ -406,7 +406,7 @@ cd /opt/ros/melodic/lib/mavros
 ./install_geographiclib_datasets.sh
 ```
 
-4. Clone the MAVROS Simple Examble
+4. Clone the MAVROS Simple Examble - More details [here](https://docs.modalai.com/mavros/)
 ```
    cd /home
 git clone -b simple-example https://gitlab.com/voxl-public/support/mavros_test.git
