@@ -412,7 +412,15 @@ cd /opt/ros/melodic/lib/mavros
 git clone -b simple-example https://gitlab.com/voxl-public/support/mavros_test.git
 ```
 
-5.  Publish the topics:  
+5. Build the package
+```
+cd /home/mavros_test
+./build.sh
+```
+
+6. Change The IP address `ROS_IP` inside `ros_environment.sh` to the VOXL's IP.
+  
+7.   Publish the topics:  
     
 
 At this point, ROS is running in VOXL2, and we need to publish the topics from the VOXL2. We can run the following launch file:
@@ -420,7 +428,7 @@ At this point, ROS is running in VOXL2, and we need to publish the topics from t
 roslaunch voxl_mpa_to_ros voxl_mpa_to_ros.launch
 
 ```
-6.  Run the mavros:
+8.  Run the mavros:
 
         To run the MavRos, we can run the following script, in the following path:
 ```
